@@ -21,33 +21,15 @@ GSCRATCH="/global/scratch2/sd/jcorrea"
 cache_dir = "/global/scratch2/sd/jcorrea/ngbi/tmp"
 
 import omero
-import pickle
-import os
 from omero.gateway import BlitzGateway
 import omero.scripts as scripts
 from omero.rtypes import *
 import omero.util.script_utils as script_utils
-import numpy as np
-from numpy import zeros, hstack, vstack
-import sys, traceback, subprocess, os
+import sys, os
 
-import time
-import timeit
-
-import matplotlib as mpl
-import scipy as sp
-import PIL as pil
-import numpy as np
-
-import omero.cli as cli
-
-from omero.rtypes import rtime, rlong, rstring, rlist, rint
-from omero_model_ExperimenterI import ExperimenterI
-from omero_model_ExperimenterGroupI import ExperimenterGroupI
-from omero_model_PermissionsI import PermissionsI
 
 import tempfile
-import subprocess
+
 
 import math
 
@@ -272,10 +254,6 @@ def weka_segmentation(conn, scriptParams, uuid):
         enableKeepAlive_time = (36*60*60)
         conn.c.enableKeepAlive(enableKeepAlive_time)
         os.system("ssh %s '/usr/syscom/opt/torque/4.2.6/bin/qsub %s'" % (system, pbs_file))
-
-def pbsgen(ij_args):
-    print(hello)
-
 
 def runAsScript():
 
